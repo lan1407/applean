@@ -1,7 +1,20 @@
-import User from '../../models/User';
+export function login(email, password) {
+  return {
+    type: 'LOGIN_REQUEST',
+    payload: {email, password},
+  };
+}
 
-export const LOGIN = 'LOGIN';
+export function loginSucceeded(payload) {
+  return {
+    type: 'LOGIN_SUCCEEDED',
+    payload,
+  };
+}
 
-export const login = (email, password) => {
-  return {type: LOGIN, user: new User(email, password)};
-};
+export function loginFailed(error) {
+  return {
+    type: 'LOGIN_FAILED',
+    error,
+  };
+}

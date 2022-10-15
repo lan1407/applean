@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 const windowWith = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-Login = ({navigation}) => {
+export default Login = ({navigation}) => {
   return (
     <ImageBackground
       style={{height: '100%', width: '100%'}}
@@ -111,13 +111,3 @@ Login = ({navigation}) => {
     </ImageBackground>
   );
 };
-
-const mapStateToProps = state => ({
-  loginedEmail: state.auths.loginedEmail,
-});
-
-const mapDispatchToProps = dispatch => ({
-  login: async (email, password) => dispatch(login(email, password)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(view);
