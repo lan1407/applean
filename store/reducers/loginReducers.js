@@ -1,34 +1,19 @@
-const initData = {
-  refreshToken: '',
-  accessToken: '',
-  isLoading: false,
-  error: '',
+import {USERS} from '../store';
+
+const initialState = {
+  userInfo: {
+    total: 0,
+  },
 };
 
-const loginReducer = (state = initData, {type, payload}) => {
-  console.log(`loginReducer type: ${type} with payload: ${payload}`);
-  switch (type) {
-    case 'HANDLE_LOGIN':
-      return {
-        ...state,
-        isLoading: true,
-      };
-    case 'LOGIN_SUCCESS':
-      return {
-        ...state,
-        refreshToken: payload.access_token,
-        accessToken: payload.refresh_token,
-        isLoading: false,
-        error: '',
-      };
-    case 'LOGIN_FAILURE':
-      return {
-        ...state,
-        isLoading: false,
-        error: 'Login fail',
-      };
+const userLogin = (state = initialState, action) => {
+  switch (action.type) {
+    case USERS.LOGIN.SUCCESS: {
+      return {...state, token: action.payload.token, userInfo: action.payload};
+    }
     default:
       return state;
   }
 };
-export default loginReducer;
+
+export default userLogin;

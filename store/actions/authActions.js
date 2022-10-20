@@ -1,20 +1,12 @@
-export function login(email, password) {
-  return {
-    type: 'LOGIN_REQUEST',
-    payload: {email, password},
-  };
-}
+import {USERS} from '../store';
 
-export function loginSucceeded(payload) {
-  return {
-    type: 'LOGIN_SUCCEEDED',
-    payload,
-  };
-}
+//payload:{ callback, user, password}
+export const loginSubmit = payload => ({
+  type: USERS.LOGIN.HANDLER,
+  payload,
+});
 
-export function loginFailed(error) {
-  return {
-    type: 'LOGIN_FAILED',
-    error,
-  };
-}
+export const loginSuccess = payload => ({
+  type: USERS.LOGIN.SUCCESS,
+  payload,
+});
