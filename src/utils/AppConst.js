@@ -65,6 +65,7 @@ export const LINEARGRADIENT = {
   BLUE_2: ['#7EAEF4', '#3A72D6'],
   DISABLE: ['#585D63', '#A4A7AD'],
   WHILE: ['rgba(255, 255, 255, 0)', '#ffffff'],
+  GREEN2: ['#53B175', '#A9F1C3']
 };
 
 // setup style

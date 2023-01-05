@@ -42,6 +42,7 @@ import FavouriteScreen from './src/screen/Favourite';
 import SearchScreen from './src/screen/Search';
 import ShopCartScreen from './src/screen/ShopCart';
 import StoreScreen from './src/screen/Store';
+import ProductInfoScreen from './src/screen/ProductInfo';
 import {SVG_NAME} from './src/assets/patch';
 
 const Stack = createNativeStackNavigator();
@@ -88,10 +89,34 @@ function App() {
             tabBarIcon: () => <SVG_NAME.IC_STORE />,
           }}
         />
-        <Tab.Screen name="Tìm kiếm" component={SearchScreen} />
-        <Tab.Screen name="Giỏ hàng" component={ShopCartScreen} />
-        <Tab.Screen name="Yêu thích" component={FavouriteScreen} />
-        <Tab.Screen name="Tài khoản" component={HomeScreen} />
+        <Tab.Screen
+          name="Tìm kiếm"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: () => <SVG_NAME.IC_TAGSEARCH />,
+          }}
+        />
+        <Tab.Screen
+          name="Giỏ hàng"
+          component={ShopCartScreen}
+          options={{
+            tabBarIcon: () => <SVG_NAME.IC_TAGCART />,
+          }}
+        />
+        <Tab.Screen
+          name="Yêu thích"
+          component={FavouriteScreen}
+          options={{
+            tabBarIcon: () => <SVG_NAME.IC_HEART />,
+          }}
+        />
+        <Tab.Screen
+          name="Tài khoản"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: () => <SVG_NAME.IC_PERSON />,
+          }}
+        />
       </Tab.Navigator>
     );
   }
@@ -100,6 +125,9 @@ function App() {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       <Stack.Screen name="HomeTab" component={MyTabs} />
+      <Stack.Screen name="Store" component={StoreScreen} />
+      <Stack.Screen name="ProductInfo" component={ProductInfoScreen} />
+      <Stack.Screen name="SearchScreen" component={SearchScreen} />
     </Stack.Navigator>
   );
 }

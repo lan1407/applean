@@ -6,70 +6,41 @@ export default StyleSheet.create({
     backgroundColor: COLOR.WHITE_0,
     height: '100%',
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+  },
+  header: {
+    // backgroundColor: 'red',
+    top: 40,
+    height: 140,
     paddingHorizontal: 20,
-  },
-  text: {
-    paddingTop: 10,
-    color: COLOR.BLACK_0,
-    fontSize: 30,
-    textAlign: 'center',
-  },
-  text1: {
-    paddingTop: 10,
-    fontSize: 15,
-  },
-  text3: {
-    color: COLOR.WHITE_0,
-    fontSize: 20,
-  },
-  button: {
-    backgroundColor: COLOR.GREEN,
-    width: '100%',
-    height: '20%',
-    borderRadius: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  input: {
-    height: '100%',
-    width: '100%',
-    borderBottomWidth: 1,
-    borderColor: COLOR.GRAY_4,
-  },
-  account: {
     flexDirection: 'row',
-  },
-  text4: {
-    color: COLOR.GREEN,
-    marginLeft: 3,
-  },
-  text5: {
-    color: COLOR.GRAY_1,
-    marginTop: 5,
-  },
-  title: {
-    left: -70,
-  },
-  container: {
-    height: '20%',
-    width: '100%',
-    // backgroundColor: '#53B175',
     alignItems: 'center',
-    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: COLOR.WHITE_5,
+  },
+  header1: {
+    marginLeft: 20,
   },
   email: {
-    color: COLOR.GRAY_2,
+    color: COLOR.GRAY_5,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
+    borderBottomWidth: 1,
+    borderColor: COLOR.WHITE_5,
+  },
+  title: {
+    top: 40,
+    paddingHorizontal: 20,
+  },
+  txt: {
     fontSize: 20,
+    fontWeight: '700',
+    paddingRight: 10,
   },
-  email1: {
-    width: '100%',
-    height: 40,
-  },
-  pass: {
-    width: '100%',
-    height: 40,
-    marginTop: 50,
+  button: {
+    backgroundColor: 'red',
   },
 });

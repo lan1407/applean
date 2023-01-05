@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLOR, STYLE_GLOBAL} from '../../utils/AppConst';
+import {COLOR} from '../../utils/AppConst';
 
 export default StyleSheet.create({
   body: {
@@ -9,8 +9,8 @@ export default StyleSheet.create({
   },
   header: {
     top: 40,
-    backgroundColor: COLOR.BLUE,
-    height: '10%',
+    // backgroundColor: COLOR.BLUE,
+    height: 'auto',
     width: '100%',
     alignItems: 'center',
     borderBottomLeftRadius: 20,
@@ -18,8 +18,21 @@ export default StyleSheet.create({
   },
   body1: {
     top: 40,
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
     // backgroundColor: 'red',
+  },
+  youfood: {
+    marginLeft: 20,
+    marginBottom: 10,
+  },
+  banner: {
+    marginBottom: 10,
+    right: 6,
+  },
+  txtSearch: {
+    color: COLOR.GRAY_2,
+    paddingLeft: 5,
+    marginTop: 5,
   },
   all: {
     color: COLOR.GREEN,
@@ -89,6 +102,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  title: {
+    marginTop: 30,
+  },
   image: {
     width: '100%',
     height: 100,
@@ -104,11 +120,12 @@ export default StyleSheet.create({
     borderColor: COLOR.GRAY_4,
   },
   box: {
-    width: 170,
+    width: 160,
     height: 250,
-    marginTop: 10,
+    marginTop: 20,
     position: 'relative',
     flex: 1,
+    marginRight: 10,
   },
   row1: {
     flexDirection: 'row',
@@ -127,5 +144,18 @@ export default StyleSheet.create({
   },
   padding: {
     padding: 15,
+  },
+  padding100: {
+    paddingBottom: 50,
+  },
+  search: {
+    backgroundColor: COLOR.WHITE_5,
+    width: '95%',
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    marginVertical: 20,
   },
 });

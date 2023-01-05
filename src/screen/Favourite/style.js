@@ -6,70 +6,86 @@ export default StyleSheet.create({
     backgroundColor: COLOR.WHITE_0,
     height: '100%',
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    paddingHorizontal: 20,
-  },
-  text: {
-    paddingTop: 10,
-    color: COLOR.BLACK_0,
-    fontSize: 30,
-    textAlign: 'center',
-  },
-  text1: {
-    paddingTop: 10,
-    fontSize: 15,
-  },
-  text3: {
-    color: COLOR.WHITE_0,
-    fontSize: 20,
-  },
-  button: {
-    backgroundColor: COLOR.GREEN,
-    width: '100%',
-    height: '20%',
-    borderRadius: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  input: {
-    height: '100%',
-    width: '100%',
-    borderBottomWidth: 1,
-    borderColor: COLOR.GRAY_4,
-  },
-  account: {
-    flexDirection: 'row',
-  },
-  text4: {
-    color: COLOR.GREEN,
-    marginLeft: 3,
-  },
-  text5: {
-    color: COLOR.GRAY_1,
-    marginTop: 5,
   },
   title: {
-    left: -70,
+    fontSize: 25,
+    fontWeight: '600',
   },
-  container: {
-    height: '20%',
+  scroll: {
+    top: 40,
+    paddingHorizontal: 20,
+  },
+  header: {
+    top: 40,
+    paddingVertical: 20,
+    height: 'auto',
     width: '100%',
-    // backgroundColor: '#53B175',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: COLOR.WHITE_5,
+  },
+  box: {
+    height: 150,
+    borderBottomWidth: 1,
+    borderColor: COLOR.WHITE_5,
+  },
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+  },
+  image: {
+    height: 100,
+    width: 100,
+    resizeMode: 'cover',
+    top: 5,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 20,
+    right: 10,
+  },
+  kilo: {
+    color: COLOR.GRAY_2,
+    marginTop: 10,
+  },
+  text1: {
+    fontSize: 35,
+    color: COLOR.GRAY_3,
+  },
+  text2: {
+    fontSize: 35,
+    color: COLOR.GREEN,
+  },
+  text: {
+    height: 50,
+    width: 50,
+    borderRadius: 15,
+    borderColor: COLOR.WHITE_5,
+    borderWidth: 1,
+    alignItems: 'center',
+    marginHorizontal: 16,
+  },
+  padding: {
+    right: -15,
+  },
+  buttom: {
+    backgroundColor: COLOR.GREEN,
+    marginHorizontal: 20,
+    height: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 20,
   },
-  email: {
-    color: COLOR.GRAY_2,
+  txtButtom: {
+    color: COLOR.WHITE_0,
     fontSize: 20,
+    fontWeight: '700',
   },
-  email1: {
-    width: '100%',
-    height: 40,
-  },
-  pass: {
-    width: '100%',
-    height: 40,
-    marginTop: 50,
+  boxButom: {
+    paddingVertical: 10,
+    backgroundColor: COLOR.WHITE_0,
   },
 });

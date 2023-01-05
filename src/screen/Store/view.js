@@ -7,11 +7,11 @@ import {COLOR, STYLE_GLOBAL} from '../../utils/AppConst';
 import {firebase} from '../../../config';
 import {Item} from '../../assets/Database';
 
-function StoreScreenView({name, firebase}) {
+const StoreScreenView = ({}) => {
   const navigation = useNavigation();
   const [products, setProducts] = useState([]);
   const [accessory, setAccessory] = useState([]);
-
+  console.log('navigation', navigation);
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       getDataFormDB();
@@ -34,19 +34,24 @@ function StoreScreenView({name, firebase}) {
     setAccessory(accessoryList);
   };
 
-  const ProductCard = ({data}) => {
-    console.log('data', data);
+  const ProductCard = ({data, onPress}) => {
+    console.log('data dsadsadsa dsadas', data.id);
     return (
-      <View style={styles.box}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('ProductInfo', data)}
+        // onPress={onPress}
+        style={styles.box}>
         <View style={styles.item}>
           {data.isOff ? (
             <View>
               <Text>{data.offPercentage}</Text>
             </View>
           ) : null}
-          <TouchableOpacity>
-            <Image source={data.productImage} style={styles.image} />
-          </TouchableOpacity>
+          {/* <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('ProductInfo', {productID: data.id})
+            }></TouchableOpacity> */}
+          <Image source={data.productImage} style={styles.image} />
           <View style={styles.padding}>
             <View style={styles.itemName}>
               <Text style={STYLE_GLOBAL.body1Semi}>{data.productName}</Text>
@@ -63,20 +68,51 @@ function StoreScreenView({name, firebase}) {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
   return (
     <View style={[styles.body]}>
       <View style={styles.header}>
-        <SVG_NAME.IC_LOGO1 />
-        <Text>Youfood</Text>
+        <SVG_NAME.IC_LOGO1 style={styles.youfood} />
+        <Text style={STYLE_GLOBAL.body1Semi}>Youfood</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Tìm kiếm')}
+          style={styles.search}>
+          <SVG_NAME.IC_SEARCH />
+          <Text style={styles.txtSearch}>Tìm kiếm</Text>
+        </TouchableOpacity>
       </View>
       <ScrollView style={styles.body1}>
+        <SVG_NAME.IC_BANNER style={styles.banner} />
         <View style={styles.title}>
           <View style={styles.row}>
             <Text style={STYLE_GLOBAL.body1Bold}>Độc quyền</Text>
+            <TouchableOpacity>
+              <Text style={styles.all}>Tất cả</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{flexDirection: 'row'}}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+              {products.map(data => {
+                return (
+                  <ProductCard
+                    // onPress={() =>
+                    //   navigation.navigate('ProductInfo', {params: 'kasxjk'})
+                    // }
+                    data={data}
+                    key={data.id}
+                  />
+                );
+              })}
+            </ScrollView>
+          </View>
+        </View>
+        <View style={styles.title}>
+          <View style={styles.row}>
+            <Text style={STYLE_GLOBAL.body1Bold}>Thịt cá</Text>
             <TouchableOpacity>
               <Text style={styles.all}>Tất cả</Text>
             </TouchableOpacity>
@@ -90,8 +126,41 @@ function StoreScreenView({name, firebase}) {
             </ScrollView>
           </View>
         </View>
+        <View style={styles.title}>
+          <View style={styles.row}>
+            <Text style={STYLE_GLOBAL.body1Bold}>Bánh ngọt</Text>
+            <TouchableOpacity>
+              <Text style={styles.all}>Tất cả</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{flexDirection: 'row'}}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+              {products.map(data => {
+                return <ProductCard data={data} key={data.id} />;
+              })}
+            </ScrollView>
+          </View>
+        </View>
+        <View style={styles.title}>
+          <View style={styles.row}>
+            <Text style={STYLE_GLOBAL.body1Bold}>Nước ngọt</Text>
+            <TouchableOpacity>
+              <Text style={styles.all}>Tất cả</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{flexDirection: 'row'}}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+              {accessory.map(data => {
+                return <ProductCard data={data} key={data.id} />;
+              })}
+            </ScrollView>
+          </View>
+        </View>
+        <View style={styles.padding100} />
       </ScrollView>
     </View>
   );
-}
-export default React.memo(StoreScreenView);
+};
+export default StoreScreenView;
