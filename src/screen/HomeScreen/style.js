@@ -41,6 +41,16 @@ export default StyleSheet.create({
     paddingRight: 10,
   },
   button: {
-    backgroundColor: 'red',
+    backgroundColor: COLOR.WHITE_5,
+    height: 67,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    marginTop: 190,
+  },
+  text3: {
+    color: COLOR.GREEN,
+    fontSize: 20,
+    fontWeight: '700',
   },
 });

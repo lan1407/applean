@@ -112,7 +112,7 @@ const StoreScreenView = ({}) => {
         </View>
         <View style={styles.title}>
           <View style={styles.row}>
-            <Text style={STYLE_GLOBAL.body1Bold}>Thịt cá</Text>
+            <Text style={STYLE_GLOBAL.body1Bold}>Mới nhất</Text>
             <TouchableOpacity>
               <Text style={styles.all}>Tất cả</Text>
             </TouchableOpacity>
@@ -128,7 +128,7 @@ const StoreScreenView = ({}) => {
         </View>
         <View style={styles.title}>
           <View style={styles.row}>
-            <Text style={STYLE_GLOBAL.body1Bold}>Bánh ngọt</Text>
+            <Text style={STYLE_GLOBAL.body1Bold}>Thịnh hành</Text>
             <TouchableOpacity>
               <Text style={styles.all}>Tất cả</Text>
             </TouchableOpacity>
@@ -144,7 +144,7 @@ const StoreScreenView = ({}) => {
         </View>
         <View style={styles.title}>
           <View style={styles.row}>
-            <Text style={STYLE_GLOBAL.body1Bold}>Nước ngọt</Text>
+            <Text style={STYLE_GLOBAL.body1Bold}>Hoa quả</Text>
             <TouchableOpacity>
               <Text style={styles.all}>Tất cả</Text>
             </TouchableOpacity>

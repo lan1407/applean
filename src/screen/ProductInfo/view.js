@@ -25,7 +25,7 @@ const ProductInfoScreenView = ({route}) => {
       <View style={styles.body1}>
         <View>
           <Text style={STYLE_GLOBAL.h2}>
-            Táo{/* {productID.productName} */}
+            Dưa Vàng{/* {productID.productName} */}
           </Text>
           <Text style={styles.kilo}>1kg</Text>
         </View>
